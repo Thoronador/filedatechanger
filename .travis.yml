@@ -1,0 +1,14 @@
+language: csharp
+solution: FileDateChanger/FileDateChanger.sln
+branches:
+  only:
+    - master
+    - travis-ci
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y mono-devel
+  - sudo apt-get install -y libmono-microsoft-csharp4.0-cil libmono-system-drawing4.0-cil libmono-winforms2.0-cil libmono-system-core4.0-cil
+script:
+  - xbuild ./FileDateChanger/FileDateChanger.sln
+notifications:
+  email: false
